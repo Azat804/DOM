@@ -17,7 +17,7 @@ for (let i = 0; i < divNumber; i++) {
   container.append(div);
   randomNumber = getRandomInRange();
 }
-let containerItems = document.querySelectorAll(".container__item");
+const containerItems = document.querySelectorAll(".container__item");
 for (let i = 0; i < containerItems.length; i++) {
   innerNumber = Number(containerItems[i].textContent);
   if (innerNumber < 31) {
@@ -30,9 +30,9 @@ for (let i = 0; i < containerItems.length; i++) {
 // Задание 2
 
 let divInRandomColor = document.createElement("div");
-let red = getRandomInRange(0, 255);
-let green = getRandomInRange(0, 255);
-let blue = getRandomInRange(0, 255);
+const red = getRandomInRange(0, 255);
+const green = getRandomInRange(0, 255);
+const blue = getRandomInRange(0, 255);
 const rgbToHex = (colorValue) => {
   const hex = colorValue.toString(16);
   return hex.length === 1 ? "0" + hex : hex;
@@ -40,6 +40,6 @@ const rgbToHex = (colorValue) => {
 const hexColor = "#" + [red, green, blue].map(rgbToHex).join("").toUpperCase();
 divInRandomColor.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
 divInRandomColor.style.color = red + green + blue > 383 ? "black" : "white";
-let colorName = ntc.name(hexColor)[1];
+const colorName = ntc.name(hexColor)[1];
 divInRandomColor.textContent = `rgb(${red}, ${green}, ${blue}); hex: ${hexColor}; colorName: ${colorName}`;
 container.append(divInRandomColor);
